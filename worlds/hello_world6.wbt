@@ -9,8 +9,8 @@ WorldInfo {
   basicTimeStep 16
 }
 Viewpoint {
-  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
-  position 6.686217343506087e-06 6.686236250329889e-06 3.20985615734356
+  orientation -0.27614308559647766 0.29842045115904847 0.913613830131356 1.5835692775616805
+  position -0.12677627979727163 -2.8978121268243093 1.8740116079312386
 }
 Floor {
   size 1 1
@@ -173,4 +173,47 @@ SpotLight {
   attenuation 0 0 1
   beamWidth 0.7
   location 0 0 1
+  on FALSE
+}
+DirectionalLight {
+  direction 0 0.5 -1
+}
+Solid {
+  translation 0 0 0.55
+  children [
+    DEF G0 Group {
+      children [
+        Shape {
+          geometry Cylinder {
+            height 0.1
+            radius 0.05
+          }
+        }
+        Pose {
+          translation 0 0 0.59
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.1
+              }
+            }
+          ]
+        }
+        Pose {
+          translation 0 0 0.19
+          children [
+            Shape {
+              geometry Sphere {
+                radius 0.1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  name "dumbbell"
+  boundingObject USE G0
+  physics Physics {
+  }
 }
