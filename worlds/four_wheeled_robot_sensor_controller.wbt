@@ -4,12 +4,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "../protos/FourWheelsRobot.proto"
 
 WorldInfo {
 }
 Viewpoint {
   orientation 0.5980047248822797 -0.006387525896290441 -0.8014671225517571 3.158709083985053
-  position 0.4866229118229979 0.001801503882534576 1.742701035844135
+  position 0.5411724661905722 0.051248659935602695 1.7268143932354523
 }
 TexturedBackground {
 }
@@ -27,7 +28,7 @@ RectangleArena {
   wallHeight 0.05
 }
 Robot {
-  translation 0 0 0.05
+  translation -0.25 0.25 0.05
   children [
     DEF body Shape {
       appearance PBRAppearance {
@@ -163,8 +164,14 @@ Robot {
       physics USE eye_ph
     }
   ]
+  name "robot1"
   boundingObject USE body
   physics Physics {
   }
   controller "four_wheeled_robot"
+}
+FourWheelsRobot {
+  translation 0.25 0 0
+  rotation 0 0 1 3.14
+  carController "four_wheeled_robot"
 }
