@@ -32,7 +32,7 @@ ds_names = ['ds_right', 'ds_left']
 for name in ds_names:
     print(f"name={name}")
     d = robot.getDevice(name)
-    d.enable(1)
+    d.enable(timestep)
     ds_list.append(d)
 
 avoid_obstacle_counter = 0
